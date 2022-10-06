@@ -1,0 +1,509 @@
+$color-scheme: rgb(120, 120, 215);
+$color-scheme-darker: rgb(83, 83, 219);
+$app-width: 60%;
+$app-height: 90% ;
+
+
+
+
+.error-bar{
+  
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  background-color: red;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: large;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+.Auth{
+  background-color: $color-scheme;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: 600;
+font-size: 18px;
+
+
+  form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+    padding: 40px 60px;
+    border-radius: 10px;
+    margin-top: -2%;
+    .green{
+      color: green;
+    }
+  
+    .blue{
+      color: blue;
+    }
+
+  }
+
+
+  @media screen and (max-width: 600px) {
+    form{
+      width: 100%;
+    height: 100%;
+    background-color: rgba($color: white, $alpha: 0.3);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: -50%;
+    padding-bottom: 50%;
+    } 
+  }
+  
+
+  button.google-auth{
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: rgb(93, 77, 235);
+    height: 40px;
+    color: white;
+    font-weight: 700;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    &:hover{
+      background-color: rgb(88, 77, 206);
+    }
+    &:active{
+      background-color: $color-scheme;
+    }
+  }
+
+}
+
+.home{
+  background-color: $color-scheme;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+
+  .container{
+    width: $app-width;
+    height: $app-height;
+    display: flex;
+
+    @media screen and (max-width: 1080px) {
+      width: 100%;
+      height: 100%;
+    }
+
+
+
+    .sidebar{
+      flex: 1;
+      background-color: rgba($color: black, $alpha: 0.4);
+   
+     
+
+      nav{
+        color: white;
+        background-color: rgba($color: black, $alpha: 0.2);
+        padding: 10px 20px;
+       
+
+        .user{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          cursor: pointer;
+          gap: 10px;
+
+          img{
+            width:45px;
+            height: 45px;
+            border-radius: 100px;
+          }
+
+          .email{
+            color: rgba($color: white, $alpha: 0.5);
+            font-size: 12px;
+            
+          }
+
+
+          .logout{
+            margin-left: auto;
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+            color: rgba($color: white, $alpha: .5);
+            cursor: pointer;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &:hover{
+              color: white;
+            }
+
+          }
+
+        }
+      }
+      
+      .search{
+
+       display: flex;
+       align-items: center;
+
+        i{
+          color: white;
+          position: fixed;
+          margin: 0 10px;
+        }
+       
+
+        input{
+          background-color: rgba($color: black, $alpha: 0.0);
+          outline: none;
+          border: none;
+          border-bottom: 1px solid  rgba($color: white, $alpha: 0.2);
+          width: 100%;
+          padding: 10px 40px;
+          color: white;
+          &::placeholder{
+            color: rgba($color: white, $alpha: 0.3);
+          }
+        }
+      }
+
+      .friends-list{
+
+        margin-top: 10%;
+
+        .friend{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          cursor: pointer;
+          gap: 10px;
+          color: white;
+          margin: 10px 0;
+          padding: 5px 20px;
+
+          &:hover{
+            background-color: rgba($color: black, $alpha: 0.2);
+          }
+
+
+          img{
+            width:42px;
+            height: 42px;
+            border-radius: 100px;
+          }
+
+          .block{
+            margin-left: auto;
+            background-color: transparent;
+            border: none;
+            font-size: 23px;
+            color: rgba($color: white, $alpha: .5);
+            cursor: pointer;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &:hover{
+              color: white;
+            }
+        
+
+          }
+          .email{
+            color: rgba($color: white, $alpha: 0.5);
+            font-size: 12px;
+           
+          }
+
+          .time-stamp{
+            margin-left: auto;
+            border: none;
+            font-size: 12px;
+            color: rgba($color: white, $alpha: .5);
+            cursor: pointer;
+
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            
+            
+          }
+
+
+        }
+
+        .friend-focused{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          cursor: pointer;
+          gap: 10px;
+          color: white;
+          margin: 10px 0;
+          padding: 5px 20px;
+          background-color: rgba($color: rgb(255, 255, 255), $alpha: 0.05);
+
+          img{
+            width:42px;
+            height: 42px;
+            border-radius: 100px;
+          }
+
+        
+
+          .block{
+            margin-left: auto;
+            background-color: transparent;
+            border: none;
+            font-size: 23px;
+            color: rgba($color: white, $alpha: .5);
+            cursor: pointer;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &:hover{
+              color: white;
+            }
+        
+
+          }
+          .email{
+            color: rgba($color: white, $alpha: 0.5);
+            font-size: 12px;
+           
+          }
+
+          
+
+          .time-stamp{
+            margin-left: auto;
+            border: none;
+            font-size: 12px;
+            color: rgba($color: white, $alpha: .5);
+            cursor: pointer;
+
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            
+           
+            
+          }
+
+        }
+      }
+
+    }
+
+    .chat{
+      flex: 2;
+      background-color: rgba($color: #000000, $alpha: 0.15);
+      
+
+      nav{
+        color: white;
+        background-color: rgba($color: black, $alpha: 0.2);
+        padding: 10px 20px;
+
+        display: flex;
+        flex-direction: row;
+
+        button.back{
+          background-color: rgba($color: white, $alpha: 0.2);
+          color: rgba($color: black, $alpha: 0.6);
+          border-width: 0px;
+          font-size: 30px;
+          margin-left: -20px;
+          margin-right: 15px;
+          margin-top: -10px;
+          margin-bottom: -7px;
+        }
+
+        .blank{
+          height: 45px;
+          width: 100%;
+        }
+
+        .profile{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          cursor: pointer;
+          gap: 10px;
+
+          img{
+            width:45px;
+            height: 45px;
+            border-radius: 100px;
+          }
+
+          .email{
+            color: rgba($color: white, $alpha: 0.5);
+            font-size: 12px;
+            
+          }
+
+          .logout{
+            margin-left: auto;
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+            color: rgba($color: white, $alpha: .5);
+            cursor: pointer;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &:hover{
+              color: white;
+            }
+          }
+
+
+        }
+
+      }
+
+      .messages{
+        
+        height: calc($app-height - 71px);
+        padding: 10px 20px;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+
+        .message{
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          .text{
+            background-color: rgb(102, 102, 246);
+            width: max-content;
+            padding: 8px 12px;
+            border-radius: 0 10px 10px 10px;
+            color: white;
+          }
+          .time{
+            font-size: 13px;
+            color: rgba($color: #000000, $alpha: 0.8);
+            margin: 5px 5px 15px;
+          } 
+        }
+
+        .mine-message{
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          .text{
+            background-color: rgb(164, 164, 242);
+            width: max-content;
+            padding: 8px 12px;
+            border-radius: 10px 0 10px 10px;
+            color: black;
+            font-weight: 600;
+          }
+          .time{
+            font-size: 13px;
+            color: rgba($color: #000000, $alpha: 0.5);
+            margin: 5px 5px 15px;
+            font-weight: 600;
+          }
+        }
+
+      }
+      .send-input{
+        display: flex;
+        
+        align-items: center;
+
+        input{
+          color: black;
+          font-size: 17px;
+          background-color: rgba($color: white, $alpha: 1.0);
+          outline: none;
+          border: none;
+          border-bottom: 1px solid  rgba($color: white, $alpha: 0.2);
+          width: 100%;
+          height: 42px;
+          padding: 5px 20px;
+          &::placeholder{
+            color: rgba($color: black, $alpha: 0.3);
+          }
+        }
+
+        button{
+          background-color: $color-scheme;
+          color: white;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 20px;
+          outline: none;
+          cursor: pointer;
+          width: 100px;
+          height: 53px;
+          border-width: 10px 20px;
+          border-style: solid;
+          border-color: white;
+          &:hover{
+            background-color: $color-scheme-darker;
+          }
+          &:active{
+            background-color: $color-scheme;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+.none{
+  display: none;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  width:  10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba($color: black, $alpha: 0.2);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
