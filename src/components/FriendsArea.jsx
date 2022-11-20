@@ -84,7 +84,7 @@ export default function FriendsArea() {
     const res = await updateDoc(doc(db, COLLECTIONS.USERS, user.email),{
       friends: arrayRemove(friend)
     })
-    console.log(res)
+    setRoomStore(null)
    }catch(err){
     console.log(err)
    }

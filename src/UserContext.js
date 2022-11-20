@@ -15,12 +15,26 @@ export default function UserProvider({children}){
     const [user, setUserStore] = useState(null)
     const [room, setRoomStore] = useState(null)
     const [error, setErrorStore] = useState(null)
-    const [pageToggle, setToggle] = useState({
-        chatPage: window.screen.width < RESPONSIVE_WIDTH ? false: true, 
-        friendsPage: true,
-        isPhoneScreen: window.screen.width < RESPONSIVE_WIDTH ? true : false
-    })
+    const [pageToggle, setToggle] = useState({chatPage: true, friendsPage: true, isPhoneScreen: false})
 
+    useEffect(()=>{
+        window.addEventListener('resize', e=>{
+            if(window.screen.width < RESPONSIVE_WIDTH){
+                setToggle({
+                    chatPage: false,
+                    friendsPage: true,
+                    isPhoneScreen: true
+                })
+            }
+            if(window.screen.width > RESPONSIVE_WIDTH){
+                setToggle({
+                    chatPage: true,
+                    friendsPage: true,
+                    isPhoneScreen: false
+                })
+            }
+        })
+    },[])
 
     const setPageToggle=(value)=>{
         setToggle({...value, isPhoneScreen: pageToggle.isPhoneScreen})

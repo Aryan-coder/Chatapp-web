@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC3PBUqdUPePWXlkIaOETNOyfE7dQ9FGIk",
-  authDomain: "chatapp-50e91.firebaseapp.com",
-  projectId: "chatapp-50e91",
-  storageBucket: "chatapp-50e91.appspot.com",
-  messagingSenderId: "57824783235",
-  appId: "1:57824783235:web:87fa0df0c2ae6c7b7e64b6"
+  apiKey: "AIzaSyCufH6GEbvFkLFvpTMXaXCHNNvHFKc9Xt0",
+  authDomain: "chatapp-70fa6.firebaseapp.com",
+  projectId: "chatapp-70fa6",
+  storageBucket: "chatapp-70fa6.appspot.com",
+  messagingSenderId: "123621220883",
+  appId: "1:123621220883:web:6e9a26a50e2848817755e6"
 };
 
 // Initialize Firebase
@@ -19,3 +19,13 @@ export const COLLECTIONS = {
   USERS : 'UsersData',
   CHATS : 'Chat',
 }
+/**
+ * const firebaseConfig = {
+  apiKey: "AIzaSyCufH6GEbvFkLFvpTMXaXCHNNvHFKc9Xt0",
+  authDomain: "chatapp-70fa6.firebaseapp.com",
+  projectId: "chatapp-70fa6",
+  storageBucket: "chatapp-70fa6.appspot.com",
+  messagingSenderId: "123621220883",
+  appId: "1:123621220883:web:6e9a26a50e2848817755e6"
+};
+ */

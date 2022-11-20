@@ -4,10 +4,30 @@ $app-width: 60%;
 $app-height: 90% ;
 
 
+.admin{
+  background-color: rgba($color: black, $alpha: 0.2);
+  padding: 10px 20px;
+  position: absolute;
+  font-weight: 600;
+  color: white;
+  span{
+    color: yellow;
+  }
+  width: 210px;
+  margin: 10px;
 
+  button{
+    background-color: transparent;
+    border-width: 0px;
+    color: white;
+    position: absolute;
+    font-size: large;
+    left: 210px;
+    cursor: pointer;
+  }
+}
 
 .error-bar{
-  
   position: fixed;
   width: 100%;
   height: 40px;
@@ -109,12 +129,14 @@ font-size: 18px;
     }
 
 
-
     .sidebar{
       flex: 1;
       background-color: rgba($color: black, $alpha: 0.4);
-   
      
+   
+      @media screen and (max-width: 600px) {
+        
+      }
 
       nav{
         color: white;
@@ -334,14 +356,12 @@ font-size: 18px;
         flex-direction: row;
 
         button.back{
-          background-color: rgba($color: white, $alpha: 0.2);
+          background-color: transparent;
           color: rgba($color: black, $alpha: 0.6);
           border-width: 0px;
           font-size: 30px;
-          margin-left: -20px;
-          margin-right: 15px;
-          margin-top: -10px;
-          margin-bottom: -7px;
+          margin-left: auto;
+          margin-top: 10px;
         }
 
         .blank{

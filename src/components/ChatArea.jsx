@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { arrayRemove, arrayUnion, doc, onSnapshot, setDoc, Timestamp, updateDoc } from 'firebase/firestore';
 import React, {useEffect, useRef, useState } from 'react'
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
+import {IoExitOutline} from "react-icons/io5";
 import { COLLECTIONS, db } from '../Firebase';
 import { useUserStore, useRoomStore, usePageToggle} from '../UserContext';
 
@@ -18,7 +19,6 @@ export default function Chat() {
   const inputRef = useRef()
 
   useEffect(()=>{
-
     if(room!=null){
       const unSub = onSnapshot(doc(db, COLLECTIONS.CHATS, room.name),(res)=>{
         if(!res.exists()){
@@ -92,7 +92,6 @@ export default function Chat() {
         </nav>
   </> : <>
     <nav>
-    {pageToggle.isPhoneScreen && <button className='back' onClick={()=>setPageToggle({chatPage: false, friendsPage: true})} ><BsArrowLeft/></button>}
             <div className='profile' >
                 <img src={room.friend.photo} />
                 <div className='column' >
@@ -100,6 +99,7 @@ export default function Chat() {
                 <span className='email' >{room.friend.email}</span>
                 </div>
             </div>
+            {pageToggle.isPhoneScreen && <button className='back' onClick={()=>setPageToggle({chatPage: false, friendsPage: true})} ><IoExitOutline/></button>}
         </nav>
         <div className='messages' >
     {(chats==null || chats.length<1) || chats.map((chat,i)=>message(chat,i))}
